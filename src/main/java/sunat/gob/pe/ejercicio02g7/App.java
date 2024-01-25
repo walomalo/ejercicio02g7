@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
@@ -35,7 +36,17 @@ public class App extends Application {
     	hbox.setPadding(sangriaHbox); //asignando la sangría para los botones
     	hbox.setAlignment(Pos.BASELINE_CENTER); // alineando el Hbox
     	
-        Scene scene = new Scene(hbox, 640, 480);
+    	Label lblData = new Label("Data");
+    	Label lblVentas = new Label("Ventas");
+    	Label lblMarketing = new Label("Marketing");
+    	Label lblDistribucion = new Label("Distribución");
+    	//Label lblCostos = new Label("Costos");
+    	
+    	//lblCostos = "Costos";
+    	
+    	VBox vbox = new VBox(lblData, lblVentas, lblMarketing, lblDistribucion);//, lblCostos);
+    	
+        Scene scene = new Scene(vbox, 640, 480);
         stage.setScene(scene);
         stage.setTitle("Grupo 7");
         stage.show();
