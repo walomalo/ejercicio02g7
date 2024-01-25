@@ -30,6 +30,8 @@ public class App extends Application {
     	Button btnEstimado = new Button ("Estimado");
     	btnEstimado.setPrefSize(85, 25);
     	
+    	Insets sangriaLabel = new Insets(0, 0, 0, 10);
+    	
     	HBox hbox = new HBox(btnActual,btnProyectado,btnEstimado);
     	hbox.setSpacing(5);
     	Insets sangriaHbox = new Insets(10, 0, 0, 0);
@@ -37,14 +39,25 @@ public class App extends Application {
     	hbox.setAlignment(Pos.BASELINE_CENTER); // alineando el Hbox
     	
     	Label lblData = new Label("Data");
+    	lblData.setStyle("-fx-font-weight:bold");
+    	
     	Label lblVentas = new Label("Ventas");
+    	lblVentas.setPadding(sangriaLabel);
+    	
     	Label lblMarketing = new Label("Marketing");
+    	lblMarketing.setPadding(sangriaLabel);
+    	
     	Label lblDistribucion = new Label("Distribución");
-    	//Label lblCostos = new Label("Costos");
+    	lblDistribucion.setPadding(sangriaLabel);
     	
-    	//lblCostos = "Costos";
+    	Label lblCostos = new Label("Costos");
+    	lblCostos.setPadding(sangriaLabel);
     	
-    	VBox vbox = new VBox(lblData, lblVentas, lblMarketing, lblDistribucion);//, lblCostos);
+    	Insets sangriaVBox = new Insets(10, 0, 0, 10);
+    	
+    	VBox vbox = new VBox(lblData, lblVentas, lblMarketing, lblDistribucion, lblCostos);
+    	vbox.setPadding(sangriaVBox);
+    	vbox.setSpacing(5);
     	
         Scene scene = new Scene(vbox, 640, 480);
         stage.setScene(scene);
